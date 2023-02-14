@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+          body{
+    background-image:url(https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483__340.jpg);
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+
+.container {
+  height: 100vh;
+}
+
+.user_card {
+  height: 400px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+
+.form_container {
+  margin-top: 50px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group-text {
+  background: #F8694A;
+  color: white;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.form-control {
+  height: 40px;
+  border-radius: 0 5px 5px 0;
+}
+
+.login_btn {
+  background: #F8694A;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+}
+
+.links {
+  color: white;
+  margin-top: 20px;
+}
+
+
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+   <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <title>Login Page</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<Br>
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+        <div class="d-flex justify-content-center">
+
+        </div>
+        <div class="d-flex justify-content-center form_container">
+          <form method="post">{% csrf_token %}
+            <div class="input-group mb-3">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+              </div>
+              <input type="email" name="email" class="form-control input_user" value="" placeholder="email">
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-append">
+                <span class="input-group-text"></span>
+              </div>
+              <input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
+            </div>
+
+            <div class="d-flex justify-content-center mt-3 login_container">
+              <button type="submit" name="button" class="btn login_btn">Login</button>
+            </div>
+          </form>
+        </div>
+        <div class="mt-4">
+          <div class="d-flex justify-content-center links">
+            Don't have an account? <a href="http://127.0.0.1:8000/homeapp/register/" class="ml-2">Sign Up</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+

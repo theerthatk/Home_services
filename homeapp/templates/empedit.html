@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      .container {
+  padding-top: 20px;
+}
+
+
+    </style>
+    <meta charset="utf-8">
+    <title>Edit emp Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <form method="post" >{% csrf_token %}
+        <div class="form-group" >
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter Name" value="{{ a.name }}">
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            <input type="text" class="form-control" name="email" placeholder="Enter Email" value="{{ a.email }}">
+        </div>
+
+        <div class="form-group">
+            <label>Service</label>
+            <select class="form-control" name="services">
+                <option value="{{ a.services }}">{{ a.services }}</option>
+                <option>Select Service</option>
+                <option>Electritian</option>
+                <option>Plumber</option>
+                <option>Housekeeper</option>
+                <option>Security guard</option>
+                <option>Gardener</option>
+                <option>Driver</option>
+                <option>Nanny /Babysitter</option>
+                <option>Pet caretaker</option>
+                <option>Mechanic</option>
+                <option>Other</option>
+
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" class="form-control" name="location" placeholder="Enter Location"
+                   value="{{ a.location }}">
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="number" class="form-control" name="phone" placeholder="Enter Phone Number"
+                   value="{{ a.phone }}">
+        </div>
+<!--        <div class="form-group">-->
+<!--            <label>Image</label>-->
+<!--            <input type="file" class="form-control" name="image">-->
+<!--            <img src="{{ a.image.url }}" height="200" width="200">-->
+<!--        </div>-->
+        <div class="form-group">
+
+            <label>Bio</label>
+            <textarea class="form-control" name="bio" rows="3" placeholder="Enter bio" >{{ a.bio }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .card {
+        height: 250px;
+        width: 300px;
+        margin: 0 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-body {
+        padding: 50px;
+        background-color: white;
+      }
+
+      .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .card-text {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .btn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+    />
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+    ></script>
+    <script src="https://kit.fontawesome.com/da5f34b410.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+    <title>Home Services Website</title>
+</head>
+<body>
+<!--  NAVBAR-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="logo">
+
+        <img src="data:image/png;base64,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"
+             height="50px" width="50px" alt="Venue Logo">
+    </div>
+    &nbsp,
+    &nbsp
+    <a class="navbar-brand" href="#"><b>HOME SERVICES</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="http://127.0.0.1:8000/homeapp/index/">Home <span
+                        class="sr-only">(current)</span></a>
+            </li>
+
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" href="http://127.0.0.1:8000/homeapp/services/">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="http://127.0.0.1:8000/homeapp/about/">About Us</a>
+            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link active" href="#">Contact Us</a>-->
+<!--            </li>-->
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="http://127.0.0.1:8000/homeapp/empwishlistdisplay/"><i
+                        class="fa-solid fa-cart-shopping me-2"></i>Wishlist</a>
+            </li>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" href="http://127.0.0.1:8000/homeapp/index/">Logout</a>
+            </li>
+        </ul>
+        &nbsp &nbsp &nbsp
+
+        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"><i class="fa-solid fa-bars"></i></button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
+        >
+            <div class="offcanvas-header">
+                <!--      <img src="">-->
+                <h5 id="offcanvasRightLabel">
+                    <h1> welcome {{ fnm }}</h1>
+
+
+                </h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <h5><a href="http://127.0.0.1:8000/miniapp/myaccount/"><i class="fa-solid fa-house"></i>&nbsp My
+                    Account</a></h5>
+
+                <br><br>
+                <br><br>
+                <br><br>
+                <h5><a href=""><i class="fa-solid fa-user-pen"></i>&nbsp Edit profile</a></h5>
+                <br><br>
+                <br><br>
+                <br><br>
+                <h5><a href="http://127.0.0.1:8000/homeapp/empwishlistdisplay/"><i class="fa-solid fa-right-from-bracket"></i>&nbsp view Wishlist</a></h5>
+                <br><br>
+                <br><br>
+                <br><br>
+
+                <h5><a href="http://127.0.0.1:8000/homeapp/index/"><i class="fa-solid fa-right-from-bracket"></i>&nbsp Log Out</a></h5>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+</nav>
+<!--CAROUSAL-->
+<!--<div class="card text-center mb-5" style="background-color: #f5f5f5; border: 1px solid #ccc;">-->
+<!--    <img src="https://images.pexels.com/photos/6197108/pexels-photo-6197108.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"-->
+<!--         class="card-img-top" alt="User profile picture" height="400px" width="300px">-->
+<!--    <div class="card-body" style="background-color: white;">-->
+<!--        <h1 class="card-title" style="font-size: 36px; font-weight: bold;">User Profile</h1>-->
+<!--        <hr style="width: 50%; border: 1px solid #ccc;">-->
+<!--        <p class="card-text" style="font-size: 18px;">Welcome to your user profile! Here you can view and edit your-->
+<!--            information, request services, and view the status of your requests.</p>-->
+<!--        <a href="http://127.0.0.1:8000/homeservice/editprofile/" class="btn btn-primary"-->
+<!--           style="font-size: 18px; padding: 10px 20px;">Edit Profile</a>-->
+<!--        <a href="http://127.0.0.1:8000/homeapp/userupload/" class="btn btn-success"-->
+<!--           style="font-size: 18px; padding: 10px 20px;">upload Service</a>-->
+<!--        <a href="http://127.0.0.1:8000/homeapp/displayemp/" class="btn btn-info"-->
+<!--           style="font-size: 18px; padding: 10px 20px;">View employees</a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="jumbotron jumbotron-fluid mb-0 text-center" style="background-color: #f5f5f5;">
+    <h1 class="display-4" style="font-size: 36px; font-weight: bold;">Welcome to Your User Profile</h1>
+    <p class="lead" style="font-size: 18px;">Here you can manage your services and view service requests</p>
+</div>
+
+<!--CAROUSAL-->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column align-items-center">
+                    <h5 class="card-title">View Profile</h5>
+                    <p class="card-text">Here you can view your personal information and details and edit them.</p>
+                    <a href="http://127.0.0.1:8000/homeapp/viewuser/" class="btn btn-primary mt-auto">View Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column align-items-center">
+                    <h5 class="card-title">Request Services</h5>
+                    <p class="card-text">Here you can upload services needed for your home .</p>
+                    <a href="http://127.0.0.1:8000/homeapp/userupload/{{id}}" class="btn btn-success mt-auto">Request
+                        Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column align-items-center">
+                    <h5 class="card-title">View Employees</h5>
+                    <p class="card-text">Here you can view employees .</p>
+                    <a href="http://127.0.0.1:8000/homeapp/displayemp/" class="btn btn-info mt-auto">View Employees</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--CARD-->
+
+<div class="container mt-5">
+    <h2 class="text-center">Featured Home Services</h2>
+    <p class="text-center">Our top offerings for keeping your home comfortable and running smoothly</p>
+    <div class="row mt-5">
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="https://media.gettyimages.com/id/1226023669/photo/its-a-pleasure-doing-business-with-you.jpg?s=612x612&w=0&k=20&c=JPlOlUHjm-qMT8uym_df7vRlEpy8oHKdkNQ43ofzCT4="
+                     class="card-img-top" alt="Service Image">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="https://media.gettyimages.com/id/1218727916/photo/woman-wearing-gloves-cleaning-desktop.jpg?s=612x612&w=0&k=20&c=i0DvmRBBjo-Q4DaJHywi4mQzRYOCRjPKh3m7wIYHHNw="
+                     class="card-img-top" alt="Service Image">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="https://media.gettyimages.com/id/1257805716/photo/couple-talking-to-finance-advisor-at-home.jpg?s=612x612&w=0&k=20&c=gNlPHsk9jasN37y52BS2zswnyFiBYCV21teoDZ6mUJI="
+                     class="card-img-top" alt="Service Image">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--footer-->
+<footer>
+    <div class="container-fluid text-white mt-5" style="background-color:#343a40">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="about-veno">
+                    <div class="logo">
+                        <br>
+                        <img src="data:image/png;base64,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"
+                             height="150px" width="150px" alt="Venue Logo">
+                    </div>
+                    <p>We provide a platform that allows skilled workers to connect with users for looking for specific
+                        services.our services
+                        include elctritian,plumber housekeeper,security guard,gardener,driver,babaysitter,petcaretaker
+                        and mechanic.
+                        Employees needed for home maintenance are provided on this website also skillerd workers can
+                        find the perfect job for them.
+
+                    </p>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="useful-links ">
+                    <div class="footer-heading">
+                        <br>
+                        <br>
+                        <h2>Useful Links</h2>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><a href="index.html"><i class="fa fa-stop"></i>Home</a></li>
+                                <li><a href="about.html"><i class="fa fa-stop"></i>About</a></li>
+                                <li><a href="contact.html"><i class="fa fa-stop"></i>Contact Us</a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="contact-info">
+                    <div class="footer-heading">
+                        <br>
+                        <br>
+                        <h2>Contact Information</h2>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p><i class="fa fa-map-marker"></i> 212 Barrington Court New York</p>
+                    <ul>
+                        <li><span>Phone:</span><a href="#">+1 333 4040 5566</a></li>
+                        <li><span>Email:</span><a href="#">contact@company.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <p class="text-center">
+                &copy; Home Services 2023. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

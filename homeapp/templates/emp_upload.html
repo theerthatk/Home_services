@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      .container {
+  padding-top: 20px;
+}
+
+    </style>
+    <meta charset="utf-8">
+    <title>Profile Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Profile Form</h1>
+    <form method="post">{% csrf_token %}
+        <div class="form-group" >
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter Name" value="{{cn}}"  required readonly  >
+        </div>
+         <div class="form-group" >
+            <label>email</label>
+            <input type="text" class="form-control" name="email" placeholder="Enter Email" value="{{el}}" required readonly >
+        </div>
+        <!--        <div class="form-group">-->
+        <!--          <label for="service">Service</label>-->
+        <!--          <input type="text" class="form-control" id="service" placeholder="Enter Service">-->
+        <!--        </div>-->
+        <div class="form-group" >
+            <label>Service</label>
+            <select class="form-control" name="services">
+                <option >Select Service</option>
+                <option >Electritian</option>
+                <option >Plumber</option>
+                <option >Housekeeper</option>
+                <option >Security guard</option>
+                <option >Gardener</option>
+                <option >Driver</option>
+                <option >Nanny /Babysitter</option>
+                <option>Pet caretaker</option>
+                <option >Mechanic</option>
+                <option>Other</option>
+
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="form-group" >
+            <label>Location</label>
+            <input type="text" class="form-control" name="location" placeholder="Enter Location">
+        </div>
+        <div class="form-group">
+            <label >Phone Number</label>
+            <input type="number" class="form-control" name="phone" placeholder="Enter Phone Number">
+        </div>
+<!--        <div class="form-group" >-->
+<!--            <label >Image</label>-->
+<!--            <input type="file" class="form-control" name="image">-->
+<!--        </div>-->
+        <div class="form-group" >
+            <label>Bio</label>
+            <textarea class="form-control" name="bio" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+</body>
+</html>
